@@ -8,14 +8,14 @@
 ![7](https://github.com/saadetcatakakgunes1211/MyElearningProject/assets/131744493/199f30a4-04f7-480f-974d-1df77f42ad88)
 ![8](https://github.com/saadetcatakakgunes1211/MyElearningProject/assets/131744493/8bd031c4-91e1-4877-955e-deddaf1e2fb0)
 
-#Açıklama
+# Açıklama
 Asp.Net MVC ile DbFirst kullanılarak oluşturulmuş *dinamik* web projesidir. Admin paneli, register sayfası , login sayfası, error sayfası mevcuttur.
 Admin panelinde crud işlemleri yapılarak gerekli düzenlemeler gerçekleştirilir.Mesaj gönderme bölümü üzerinden admin ile iletişime geçilebilir.
 Register sayfası ile kayıt olunabilir. Login sayfası üzerinden admin paneline ulaşılabilinir. Hatalı kullanım yapıldığında error page sayfası sizi anasayfaya yönlendirebilir.
 
-#Kullanılan Teknolojiler
--Asp.Net MVC-
--DbFirst-
--Entity Framework-
--MSSQL-
+# Kullanılan Teknolojiler
+- Asp.Net MVC
+- DbFirst
+- Entity Framework
+- MSSQL
 
