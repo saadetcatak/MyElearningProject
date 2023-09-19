@@ -1,0 +1,34 @@
+﻿@model MyElearningProject.DAL.Entities.Testimonial
+@{
+    ViewBag.Title = "AddTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h3>Yeni Referans Bilgileri</h3>
+<form method="post" enctype="multipart/form-data">
+    <br />
+    <label>Referans Adı-Soyadı</label>
+    <input type="text"  class="form-control" name="NameSurname"/>
+    <br />
+    <br />
+    <label>Unvan</label>
+    <input type="text"  class="form-control" name="Title"/>
+    <br />
+    <br />
+    <label>Yorum</label>
+    <textarea  class="form-control" name="Comment"></textarea>
+    <br />
+    <br />
+    <label>Görsel</label>
+    <input type="file"  class="form-control" name="ImageUrl"/>
+    <br />
+    <br />
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="Status" value="true" id="status">
+        <label class="form-check-label" for="status">Durum</label>
+    </div>
+    <br />
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+</form>

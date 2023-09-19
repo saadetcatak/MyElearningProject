@@ -1,0 +1,43 @@
+﻿@model List<MyElearningProject.DAL.Entities.ContactInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                İletişim Bilgileri
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Adres</th>
+                        <th>Telefon</th>
+                        <th>Mail</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ContactInfoID</td>
+                            <td>@item.Address</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Email</td>
+                            <td>
+                                <a href="/ContactInfo/DeleteContactInfo/@item.ContactInfoID" class="btn btn-outline-danger" id="DeleteBtn"
+                                   onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                            </td>
+                            <td><a href="/ContactInfo/UpdateContactInfo/@item.ContactInfoID" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+                </table>
+                <a href="/ContactInfo/AddContactInfo/" class="btn btn-outline-primary">Yeni Kategori Girişi</a>
+            </div>
+        </div>
+    </div>
+</div>

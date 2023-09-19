@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h3>Gelen Mesajlar</h3>
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Mail</th>
+                        <th>Konu</th>
+                        <th>Mesaj</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.NameSurname</td>
+                            <td>@item.EMail</td>
+                            <td>@item.Subject</td>
+                            <td>@item.Content</td>
+                            <td>
+                                <a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-outline-danger" id="DeleteBtn"
+                                   onclick="return confirm('Silmek istediğinize emin misiniz?');"> Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
