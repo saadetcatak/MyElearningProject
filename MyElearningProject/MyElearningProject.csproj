@@ -131,9 +131,13 @@
     <Compile Include="Controllers\AboutMatterController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContactInfoController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeAboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeCourseController.cs" />
     <Compile Include="Controllers\InstructorAnalysisController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\MapController.cs" />
@@ -148,6 +152,7 @@
     <Compile Include="DAL\Entities\ContactInfo.cs" />
     <Compile Include="DAL\Entities\Course.cs" />
     <Compile Include="DAL\Entities\CourseRegister.cs" />
+    <Compile Include="DAL\Entities\Feature.cs" />
     <Compile Include="DAL\Entities\Instructor.cs" />
     <Compile Include="DAL\Entities\Map.cs" />
     <Compile Include="DAL\Entities\Message.cs" />
@@ -224,6 +229,18 @@
     <Compile Include="Migrations\202309192007374_add_mig_instructor_rev.cs" />
     <Compile Include="Migrations\202309192007374_add_mig_instructor_rev.designer.cs">
       <DependentUpon>202309192007374_add_mig_instructor_rev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309201300416_add_mig_feature.cs" />
+    <Compile Include="Migrations\202309201300416_add_mig_feature.designer.cs">
+      <DependentUpon>202309201300416_add_mig_feature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309201302454_add_mig_feature_rev.cs" />
+    <Compile Include="Migrations\202309201302454_add_mig_feature_rev.designer.cs">
+      <DependentUpon>202309201302454_add_mig_feature_rev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309201359341_add_mig_category_rev.cs" />
+    <Compile Include="Migrations\202309201359341_add_mig_category_rev.designer.cs">
+      <DependentUpon>202309201359341_add_mig_category_rev.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1049,6 +1066,19 @@
     <Content Include="Views\InstructorAnalysis\Index.cshtml" />
     <Content Include="Views\InstructorAnalysis\InstructorPanelPartial.cshtml" />
     <Content Include="Views\InstructorAnalysis\CommentPartial.cshtml" />
+    <Content Include="Views\Shared\_DefaultLayout.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\FeaturePartial.cshtml" />
+    <Content Include="Views\Default\AboutPartial.cshtml" />
+    <Content Include="Views\Default\AboutMatterPartial.cshtml" />
+    <Content Include="Views\Default\CategoryPartial.cshtml" />
+    <Content Include="Views\Default\CoursePartial.cshtml" />
+    <Content Include="Views\Default\InstructorPartial.cshtml" />
+    <Content Include="Views\Default\TestimonialPartial.cshtml" />
+    <Content Include="Views\HomeAbout\Index.cshtml" />
+    <Content Include="Views\HomeCourse\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1119,6 +1149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309192007374_add_mig_instructor_rev.resx">
       <DependentUpon>202309192007374_add_mig_instructor_rev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309201300416_add_mig_feature.resx">
+      <DependentUpon>202309201300416_add_mig_feature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309201302454_add_mig_feature_rev.resx">
+      <DependentUpon>202309201302454_add_mig_feature_rev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309201359341_add_mig_category_rev.resx">
+      <DependentUpon>202309201359341_add_mig_category_rev.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
