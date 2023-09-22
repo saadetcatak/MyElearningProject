@@ -21,7 +21,7 @@ namespace MyElearningProject.DAL.Context
         public DbSet<Message> Messages { get; set; }
         public DbSet<Map> Maps { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
-
         public DbSet<Feature> Features { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

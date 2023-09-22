@@ -149,6 +149,7 @@
     <Compile Include="DAL\Entities\About.cs" />
     <Compile Include="DAL\Entities\AboutMatter.cs" />
     <Compile Include="DAL\Entities\Category.cs" />
+    <Compile Include="DAL\Entities\Comment.cs" />
     <Compile Include="DAL\Entities\ContactInfo.cs" />
     <Compile Include="DAL\Entities\Course.cs" />
     <Compile Include="DAL\Entities\CourseRegister.cs" />
@@ -241,6 +242,14 @@
     <Compile Include="Migrations\202309201359341_add_mig_category_rev.cs" />
     <Compile Include="Migrations\202309201359341_add_mig_category_rev.designer.cs">
       <DependentUpon>202309201359341_add_mig_category_rev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309221720599_add_mig_comment.cs" />
+    <Compile Include="Migrations\202309221720599_add_mig_comment.designer.cs">
+      <DependentUpon>202309221720599_add_mig_comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309221730295_add_mig_comment-relations.cs" />
+    <Compile Include="Migrations\202309221730295_add_mig_comment-relations.designer.cs">
+      <DependentUpon>202309221730295_add_mig_comment-relations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1079,6 +1088,7 @@
     <Content Include="Views\HomeCourse\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\SendMessage.cshtml" />
+    <Content Include="Views\InstructorAnalysis\CourseListByInstructor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1158,6 +1168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309201359341_add_mig_category_rev.resx">
       <DependentUpon>202309201359341_add_mig_category_rev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309221720599_add_mig_comment.resx">
+      <DependentUpon>202309221720599_add_mig_comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309221730295_add_mig_comment-relations.resx">
+      <DependentUpon>202309221730295_add_mig_comment-relations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,7 +24,22 @@ namespace MyElearningProject.Controllers
 
         public PartialViewResult CommentPartial()
         {
-            return PartialView();
+            //select InstructorID from Instructors where Name='Saadet' and Surname='Çatak'=v1
+            var v1 = context.Instructors.Where(x => x.Name == "Saadet" && x.Surname == "Çatak").Select(y => y.InstructorID).FirstOrDefault();
+
+            //select CourseID from Courses where InstructorID
+            var v2 = context.Courses.Where(x => x.InstructorID == v1).Select(y => y.CourseID).ToList();
+
+            //select*from  Comments where CourseID
+            var v3 = context.Comments.Where(x => v2.Contains(x.CourseID)).ToList();
+
+            return PartialView(v3);
+        }
+
+        public PartialViewResult CourseListByInstructor()
+        {
+            var values= context.Courses.Where(x => x.InstructorID == 1).ToList();
+            return PartialView(values);
         }
     }
 }
