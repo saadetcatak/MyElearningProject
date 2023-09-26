@@ -19,6 +19,13 @@ namespace MyElearningProject.Controllers
         {
             id = 1;
             var values = context.Instructors.Where(x => x.InstructorID == id).ToList();
+            var v1 = context.Instructors.Where(x => x.Name == "Saadet" && x.Surname == "Çatak").Select(y => y.InstructorID).FirstOrDefault();
+            ViewBag.courseCount = context.Courses.Where(x => x.InstructorID == 1).Count();
+
+
+            //select CourseID from Courses where InstructorID
+            var v2 = context.Courses.Where(x => x.InstructorID == v1).Select(y => y.CourseID).ToList();
+            ViewBag.commentCount = context.Comments.Where(x => v2.Contains(x.CourseID)).Count();
             return PartialView(values);
         }
 
@@ -26,11 +33,15 @@ namespace MyElearningProject.Controllers
         {
             //select InstructorID from Instructors where Name='Saadet' and Surname='Çatak'=v1
             var v1 = context.Instructors.Where(x => x.Name == "Saadet" && x.Surname == "Çatak").Select(y => y.InstructorID).FirstOrDefault();
+            ViewBag.courseCount = context.Courses.Where(x => x.InstructorID == 1).Count();
+
 
             //select CourseID from Courses where InstructorID
             var v2 = context.Courses.Where(x => x.InstructorID == v1).Select(y => y.CourseID).ToList();
+            ViewBag.commentCoumt= context.Comments.Where(x => v2.Contains(x.CourseID)).Count();
 
-            //select*from  Comments where CourseID
+
+            //select*from Comments where CourseID
             var v3 = context.Comments.Where(x => v2.Contains(x.CourseID)).ToList();
 
             return PartialView(v3);

@@ -23,5 +23,7 @@ namespace MyElearningProject.DAL.Context
         public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Process> Processes { get; set; }
     }
 }

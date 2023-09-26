@@ -140,8 +140,10 @@
     <Compile Include="Controllers\HomeCourseController.cs" />
     <Compile Include="Controllers\InstructorAnalysisController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubscribeController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
@@ -157,6 +159,8 @@
     <Compile Include="DAL\Entities\Instructor.cs" />
     <Compile Include="DAL\Entities\Map.cs" />
     <Compile Include="DAL\Entities\Message.cs" />
+    <Compile Include="DAL\Entities\Process.cs" />
+    <Compile Include="DAL\Entities\Review.cs" />
     <Compile Include="DAL\Entities\Student.cs" />
     <Compile Include="DAL\Entities\Subscribe.cs" />
     <Compile Include="DAL\Entities\Testimonial.cs" />
@@ -250,6 +254,18 @@
     <Compile Include="Migrations\202309221730295_add_mig_comment-relations.cs" />
     <Compile Include="Migrations\202309221730295_add_mig_comment-relations.designer.cs">
       <DependentUpon>202309221730295_add_mig_comment-relations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309250723073_add_mig_course_des.cs" />
+    <Compile Include="Migrations\202309250723073_add_mig_course_des.designer.cs">
+      <DependentUpon>202309250723073_add_mig_course_des.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309261857496_add_mig_review.cs" />
+    <Compile Include="Migrations\202309261857496_add_mig_review.designer.cs">
+      <DependentUpon>202309261857496_add_mig_review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309262006448_add_mig_process.cs" />
+    <Compile Include="Migrations\202309262006448_add_mig_process.designer.cs">
+      <DependentUpon>202309262006448_add_mig_process.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1089,11 +1105,13 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\SendMessage.cshtml" />
     <Content Include="Views\InstructorAnalysis\CourseListByInstructor.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\MyCourseList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\AboutUs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1174,6 +1192,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309221730295_add_mig_comment-relations.resx">
       <DependentUpon>202309221730295_add_mig_comment-relations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309250723073_add_mig_course_des.resx">
+      <DependentUpon>202309250723073_add_mig_course_des.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309261857496_add_mig_review.resx">
+      <DependentUpon>202309261857496_add_mig_review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309262006448_add_mig_process.resx">
+      <DependentUpon>202309262006448_add_mig_process.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
