@@ -15,17 +15,18 @@ namespace MyElearningProject.Controllers
             return View();
         }
 
-        public PartialViewResult InstructorPanelPartial(int id)
+        public PartialViewResult InstructorPanelPartial()
         {
-            id = 1;
+            int id = 3;
             var values = context.Instructors.Where(x => x.InstructorID == id).ToList();
+
             var v1 = context.Instructors.Where(x => x.Name == "Saadet" && x.Surname == "Çatak").Select(y => y.InstructorID).FirstOrDefault();
             ViewBag.courseCount = context.Courses.Where(x => x.InstructorID == 1).Count();
 
-
-            //select CourseID from Courses where InstructorID
             var v2 = context.Courses.Where(x => x.InstructorID == v1).Select(y => y.CourseID).ToList();
+
             ViewBag.commentCount = context.Comments.Where(x => v2.Contains(x.CourseID)).Count();
+
             return PartialView(values);
         }
 
@@ -36,9 +37,11 @@ namespace MyElearningProject.Controllers
             ViewBag.courseCount = context.Courses.Where(x => x.InstructorID == 1).Count();
 
 
+
             //select CourseID from Courses where InstructorID
             var v2 = context.Courses.Where(x => x.InstructorID == v1).Select(y => y.CourseID).ToList();
             ViewBag.commentCoumt= context.Comments.Where(x => v2.Contains(x.CourseID)).Count();
+
 
 
             //select*from Comments where CourseID

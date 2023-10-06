@@ -13,6 +13,7 @@ namespace MyElearningProject.DAL.Entities
         public string CategoryName { get; set; }
         public string CategoryImage { get; set; }
         public List<Course> Courses { get; set; }
+        public bool Status { get; set; }
 
     }
 }

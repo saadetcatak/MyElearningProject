@@ -32,5 +32,25 @@ namespace MyElearningProject.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminLogin(Admin admin)
+        {
+            var values = context.Admins.FirstOrDefault(x => x.Email == admin.Email && x.Password == admin.Password);
+            if (values != null)
+            {
+                FormsAuthentication.SetAuthCookie(values.Email, false);
+                Session["CurrentMail"] = values.Email;
+                Session.Timeout = 60;
+                return RedirectToAction("Index", "AdminLayout");
+            }
+            return View();
+        }
     }
 }

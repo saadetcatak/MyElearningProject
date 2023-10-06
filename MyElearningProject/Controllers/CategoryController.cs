@@ -13,7 +13,7 @@ namespace MyElearningProject.Controllers
         ElearningContext context = new ElearningContext();
         public ActionResult Index()
         {
-            
+
             var values = context.Categories.ToList();
             return View(values);
         }
@@ -21,13 +21,13 @@ namespace MyElearningProject.Controllers
         [HttpGet]
         public ActionResult AddCategory()
         {
-           
+
             return View();
         }
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-           
+
             context.Categories.Add(category);
             context.SaveChanges();
             return RedirectToAction("Index");
@@ -35,8 +35,8 @@ namespace MyElearningProject.Controllers
 
         public ActionResult DeleteCategory(int id)
         {
-            
-            var values=context.Categories.Find(id);
+
+            var values = context.Categories.Find(id);
             context.Categories.Remove(values);
             context.SaveChanges();
             return RedirectToAction("Index");
@@ -45,18 +45,45 @@ namespace MyElearningProject.Controllers
         [HttpGet]
         public ActionResult UpdateCategory(int id)
         {
-           
+
             var value = context.Categories.Find(id);
             return View(value);
         }
+
         [HttpPost]
         public ActionResult UpdateCategory(Category category)
         {
-            
+
             var value = context.Categories.Find(category.CategoryID);
             value.CategoryName = category.CategoryName;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult ChangeStatus(int id)
+        {
+            var value = context.Categories.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult ChangeStatus(Category category)
+        {
+            var values = context.Categories.Find(category.CategoryID);
+
+            if (values.Status == false)
+            {
+                values.Status = true;
+            }
+            else
+            {
+                values.Status = false;
+            }
+            //values.Status = category.Status;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
