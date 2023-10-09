@@ -36,7 +36,7 @@ namespace MyElearningProject.Controllers
 
         public PartialViewResult CategoryPartial()
         {
-            var values = context.Categories.ToList();
+            var values = context.Categories.Where(x=>x.Status==true).ToList();
             return PartialView(values);
         }
 

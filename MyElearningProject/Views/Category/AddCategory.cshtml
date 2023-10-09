@@ -4,14 +4,24 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Yeni Kategori Ekleme Sayfası</h2>
-<br />
+﻿<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Kategoriler</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">Kategori Ekleme Sayfası</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Raporları İndir</a>
+    </div>
+</div>
 
 <form method="post">
     <label>Kategori Adını Giriniz</label>
-    @Html.TextBoxFor(x=>x.CategoryName, new {@class="form-control"})
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
     <br />
-    <br />  
+    <br />
     <button class="btn btn-outline-info">Kaydet</button>
 </form>
 

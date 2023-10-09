@@ -13,14 +13,19 @@ namespace MyElearningProject.Controllers
     {
         ElearningContext context = new ElearningContext();
 
-        [HttpGet]
+
         public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult StudentLogin()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(Student student)
+        public ActionResult StudentLogin(Student student)
         {
             var values = context.Students.FirstOrDefault(x => x.Email == student.Email && x.Password == student.Password);
             if(values!=null)
@@ -48,7 +53,28 @@ namespace MyElearningProject.Controllers
                 FormsAuthentication.SetAuthCookie(values.Email, false);
                 Session["CurrentMail"] = values.Email;
                 Session.Timeout = 60;
-                return RedirectToAction("Index", "AdminLayout");
+                return RedirectToAction("Index", "Category");
+            }
+            return View();
+        }
+
+
+        [HttpGet]
+        public ActionResult InstructorLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult InstructorLogin(Instructor instructor)
+        {
+            var values = context.Instructors.FirstOrDefault(x => x.Email == instructor.Email && x.Password == instructor.Password);
+            if (values != null)
+            {
+                FormsAuthentication.SetAuthCookie(values.Email, false);
+                Session["CurrentMail"] = values.Email;
+                Session.Timeout = 60;
+                return RedirectToAction("Index", "InstructorAnalysis");
             }
             return View();
         }

@@ -140,6 +140,7 @@
     <Compile Include="Controllers\HomeCourseController.cs" />
     <Compile Include="Controllers\InstructorAnalysisController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
+    <Compile Include="Controllers\InstructorCourseController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -166,6 +167,7 @@
     <Compile Include="DAL\Entities\Student.cs" />
     <Compile Include="DAL\Entities\Subscribe.cs" />
     <Compile Include="DAL\Entities\Testimonial.cs" />
+    <Compile Include="DAL\Entities\WatchCourse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,6 +278,14 @@
     <Compile Include="Migrations\202310061103386_add_mig_admin.cs" />
     <Compile Include="Migrations\202310061103386_add_mig_admin.designer.cs">
       <DependentUpon>202310061103386_add_mig_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310091403123_add_mig_instructor.cs" />
+    <Compile Include="Migrations\202310091403123_add_mig_instructor.designer.cs">
+      <DependentUpon>202310091403123_add_mig_instructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310091509431_mig_relation_watchcourses.cs" />
+    <Compile Include="Migrations\202310091509431_mig_relation_watchcourses.designer.cs">
+      <DependentUpon>202310091509431_mig_relation_watchcourses.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1452,6 +1462,12 @@
     <Content Include="Templates\login-form-07\scss\style.scss" />
     <Content Include="Views\Profile\AboutMe.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\Login\StudentLogin.cshtml" />
+    <Content Include="Views\Login\InstructorLogin.cshtml" />
+    <Content Include="Views\Shared\_InstructorLayout.cshtml" />
+    <Content Include="Views\InstructorCourse\Index.cshtml" />
+    <Content Include="Views\InstructorCourse\AddVideo.cshtml" />
+    <Content Include="Views\InstructorCourse\VideoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1551,6 +1567,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310061103386_add_mig_admin.resx">
       <DependentUpon>202310061103386_add_mig_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310091403123_add_mig_instructor.resx">
+      <DependentUpon>202310091403123_add_mig_instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310091509431_mig_relation_watchcourses.resx">
+      <DependentUpon>202310091509431_mig_relation_watchcourses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

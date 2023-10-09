@@ -60,17 +60,12 @@ namespace MyElearningProject.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
+
+
+
         public ActionResult ChangeStatus(int id)
         {
-            var value = context.Categories.Find(id);
-            return View(value);
-        }
-
-        [HttpPost]
-        public ActionResult ChangeStatus(Category category)
-        {
-            var values = context.Categories.Find(category.CategoryID);
+            var values = context.Categories.Find(id);
 
             if (values.Status == false)
             {
