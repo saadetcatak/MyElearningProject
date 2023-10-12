@@ -1,4 +1,4 @@
-﻿
+﻿@model MyElearningProject.DAL.Entities.Instructor
 @{
     Layout = null;
 }
@@ -34,7 +34,7 @@
                     <img src="~/Templates/Login_v1/images/img-01.png" alt="IMG">
                 </div>
 
-                <form class="login100-form validate-form" method="post">
+                <form class="login100-form validate-form" action="InstructorLogin"  method="post">
                     <span class="login100-form-title">
                         Eğitmen Giriş Paneli
                     </span>
@@ -56,26 +56,21 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                           Giriş Yap
+                        <button type="submit" class="login100-form-btn">
+                            Giriş Yap
                         </button>
                     </div>
 
                     <div class="text-center p-t-12">
-                       
+
                         <a class="txt2" href="#">
                             Kullanıcı Adı / Şifre Unuttum ?
                         </a>
-                    </div>                   
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
-
-
-
-
-    <!--===============================================================================================-->
+    </div><!--===============================================================================================-->
     <script src="~/Templates/Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
     <script src="~/Templates/Login_v1/vendor/bootstrap/js/popper.js"></script>
@@ -85,9 +80,9 @@
     <!--===============================================================================================-->
     <script src="~/Templates/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
     <script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
     </script>
     <!--===============================================================================================-->
     <script src="~/Templates/Login_v1/js/main.js"></script>

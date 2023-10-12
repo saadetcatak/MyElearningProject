@@ -28,7 +28,7 @@ namespace MyElearningProject.Controllers
         {
             context.Messages.Add(message);
             context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Contact");
         }
 
     }

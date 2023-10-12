@@ -8,17 +8,15 @@ using System.Web.Mvc;
 
 namespace MyElearningProject.Controllers
 {
-    public class ReviewController : Controller
+    public class CommentController : Controller
     {
         ElearningContext context = new ElearningContext();
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            
-
-
-            var course =context.Courses.ToList();
+            ViewBag.id = id;
+            var course = context.Courses.ToList();
             List<SelectListItem> courseList = (from x in course
                                                select new SelectListItem
                                                {
@@ -26,19 +24,20 @@ namespace MyElearningProject.Controllers
                                                    Value = x.CourseID.ToString()
                                                }).ToList();
             ViewBag.course = courseList;
-
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(Review review)
+        public ActionResult Index(Comment comment)
         {
-            var email = Session["CurrentMail"];
-            var studentID = context.Students.Where(x => x.Email == email.ToString()).Select(x => x.StudentID).FirstOrDefault();
-            review.StudentID = studentID;
-            context.Reviews.Add(review);
-            context.SaveChanges();
-            return RedirectToAction("Index","StudentCourse");
+            var values = context.Courses.Find(comment.CourseID);
+            comment.CommentStatus = true;
+            comment.CourseID =values.CourseID;
+            context.Comments.Add(comment);          
+            return RedirectToAction("Index", "StudentCourse");
+
+
         }
+
     }
 }

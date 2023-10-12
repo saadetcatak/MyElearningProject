@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AboutMatterController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContactInfoController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
@@ -147,6 +148,8 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentCourseController.cs" />
+    <Compile Include="Controllers\StudentProfileController.cs" />
     <Compile Include="Controllers\SubscribeController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="DAL\Context\ElearningContext.cs" />
@@ -287,6 +290,14 @@
     <Compile Include="Migrations\202310091509431_mig_relation_watchcourses.designer.cs">
       <DependentUpon>202310091509431_mig_relation_watchcourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310092013172_mig_update_student.cs" />
+    <Compile Include="Migrations\202310092013172_mig_update_student.designer.cs">
+      <DependentUpon>202310092013172_mig_update_student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310101235394_add_mig_course_update.cs" />
+    <Compile Include="Migrations\202310101235394_add_mig_course_update.designer.cs">
+      <DependentUpon>202310101235394_add_mig_course_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -312,6 +323,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\admin.jpg" />
     <Content Include="Templates\elearning-html-template\404.html" />
     <Content Include="Templates\elearning-html-template\about.html" />
     <Content Include="Templates\elearning-html-template\contact.html" />
@@ -361,6 +373,11 @@
     <Content Include="Templates\elearning-html-template\READ-ME.txt" />
     <Content Include="Templates\elearning-html-template\team.html" />
     <Content Include="Templates\elearning-html-template\testimonial.html" />
+    <Content Include="Templates\half-star-rating\css-half-star-rating\dist\index.html" />
+    <Content Include="Templates\half-star-rating\css-half-star-rating\dist\style.css" />
+    <Content Include="Templates\half-star-rating\css-half-star-rating\LICENSE.txt" />
+    <Content Include="Templates\half-star-rating\css-half-star-rating\src\index.html" />
+    <Content Include="Templates\half-star-rating\css-half-star-rating\src\style.css" />
     <Content Include="Templates\login-form-07\css\bootstrap.min.css" />
     <Content Include="Templates\login-form-07\css\bootstrap\bootstrap-grid.css" />
     <Content Include="Templates\login-form-07\css\bootstrap\bootstrap-reboot.css" />
@@ -1468,10 +1485,17 @@
     <Content Include="Views\InstructorCourse\Index.cshtml" />
     <Content Include="Views\InstructorCourse\AddVideo.cshtml" />
     <Content Include="Views\InstructorCourse\VideoList.cshtml" />
+    <Content Include="Views\InstructorCourse\UpdateCourse.cshtml" />
+    <Content Include="Views\Shared\_StudentLayout.cshtml" />
+    <Content Include="Views\StudentCourse\Index.cshtml" />
+    <Content Include="Views\StudentCourse\WatchCourse.cshtml" />
+    <Content Include="Templates\half-star-rating\css-half-star-rating\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Comment\" />
+    <Folder Include="Views\StudentProfile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1573,6 +1597,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310091509431_mig_relation_watchcourses.resx">
       <DependentUpon>202310091509431_mig_relation_watchcourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310092013172_mig_update_student.resx">
+      <DependentUpon>202310092013172_mig_update_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310101235394_add_mig_course_update.resx">
+      <DependentUpon>202310101235394_add_mig_course_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

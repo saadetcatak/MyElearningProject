@@ -10,40 +10,39 @@
     <div class="col-12">
         <div class="card">
             <div class="card-block">
-                Kurslarım
+                Kurslar
                 <br />
                 <table class="table table-bordered">
                     <tr>
                         <th>#</th>
                         <th>Kurs Adı</th>
-                        <th>Kategori</th>
-                        <th>Eğitmen</th>
-                        <th>Sil</th>
-                        <th>Güncelle</th>
+                        <th>Fiyatı</th>
+                        <th>Kategorisi</th>
                         <th>Video Ekle</th>
                     </tr>
 
                     @foreach (var item in Model)
                     {
                         count++;
-                        <tr>
-                            <td>@count</td>
-                            <td>@item.Title</td>
-                            <td>@item.Category.CategoryName</td>
-                            <td>@item.Instructor.Name @item.Instructor.Surname</td>
-                            <td>
-                                <a href="/InstructorCourse/DeleteCourse/@item.CourseID" class="btn btn-outline-danger" id="DeleteBtn"
-                                   onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
-                            <td>
-                                <a href="/InstructorCourse/UpdateCourse/@item.CourseID" class="btn btn-outline-success">Güncelle</a>
-                               
-                            </td>
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Title</td>
+                    <td>@item.Price ₺</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>
+                        <a href="/InstructorCourse/DeleteCourse/@item.CourseID" class="btn btn-outline-danger" id="DeleteBtn"
+                           onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                    </td>
+                    <td>
+                        <a href="/InstructorCourse/UpdateCourse/@item.CourseID" class="btn btn-outline-success">Güncelle</a>
 
-                            <td>
-                                <a href="/InstructorCourse/AddVideo/@item.CourseID" class="btn btn-outline-info">Videolar</a>
-                            </td>
-                           
-                        </tr>
+                    </td>
+
+                    <td>
+                        <a href="/InstructorCourse/AddVideo/@item.CourseID" class="btn btn-outline-info">Videolar</a>
+                    </td>
+
+                </tr>
                     }
                 </table>
                 <a href="/Course/CreateCourse/" class="btn btn-outline-primary">Yeni Kurs Girişi</a>

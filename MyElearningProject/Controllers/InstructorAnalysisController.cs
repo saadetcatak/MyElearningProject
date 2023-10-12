@@ -21,7 +21,7 @@ namespace MyElearningProject.Controllers
             ViewBag.mail = Session["CurrentMail"];
             ViewBag.name = context.Instructors.Where(x => x.Email == values).Select(y => y.Name +" " + y.Surname).FirstOrDefault();
             
-            var values2 = context.Instructors.Where(x => x.Email == values).ToList();
+            var values2 = context.Instructors.Where(x => x.Email == values).FirstOrDefault();
 
             var v1 = context.Instructors.Where(x => x.Email==values).Select(y => y.InstructorID).FirstOrDefault();
             ViewBag.courseCount = context.Courses.Where(x => x.InstructorID == v1).Count();
@@ -57,8 +57,9 @@ namespace MyElearningProject.Controllers
         public PartialViewResult CourseListByInstructor()
         {
             var values = Session["CurrentMail"];
-        
+            
             var v1 = context.Instructors.Where(x => x.Email == values).Select(y => y.InstructorID).FirstOrDefault();
+            ViewBag.commentCount = context.Courses.Where(x => x.InstructorID == v1).Count();
             var values2= context.Courses.Where(x => x.InstructorID == v1).ToList();
             return PartialView(values2);
         }

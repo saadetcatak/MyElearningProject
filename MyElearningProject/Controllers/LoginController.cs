@@ -32,7 +32,7 @@ namespace MyElearningProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.Email, false);
                 Session["CurrentMail"] = values.Email;
-                Session.Timeout = 60;
+                Session.Timeout = 600;
                 return RedirectToAction("Index", "Profile");
             }
             return View();
@@ -52,8 +52,8 @@ namespace MyElearningProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.Email, false);
                 Session["CurrentMail"] = values.Email;
-                Session.Timeout = 60;
-                return RedirectToAction("Index", "Category");
+                Session.Timeout = 600;
+                return RedirectToAction("Index", "About");
             }
             return View();
         }
@@ -73,7 +73,7 @@ namespace MyElearningProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.Email, false);
                 Session["CurrentMail"] = values.Email;
-                Session.Timeout = 60;
+                Session.Timeout = 600;
                 return RedirectToAction("Index", "InstructorAnalysis");
             }
             return View();

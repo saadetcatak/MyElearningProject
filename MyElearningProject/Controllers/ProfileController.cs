@@ -11,8 +11,10 @@ namespace MyElearningProject.Controllers
     {
         ElearningContext context = new ElearningContext();
         public ActionResult Index()
-        {    
-            return View();
+        {
+            var email = Session["CurrentMail"];
+            var values = context.Students.Where(x => x.Email == email).FirstOrDefault();
+            return View(values);
         }
         public ActionResult AboutMe()
         {
