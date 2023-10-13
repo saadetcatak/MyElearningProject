@@ -15,8 +15,7 @@ namespace MyElearningProject.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            
-
+      
 
             var course =context.Courses.ToList();
             List<SelectListItem> courseList = (from x in course

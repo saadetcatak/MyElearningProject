@@ -4,40 +4,32 @@
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 
-<div class="row page-titles">
-    <div class="col-md-5 col-8 align-self-center">
-        <h3 class="text-themecolor m-b-0 m-t-0">Profil Bilgileri Güncelleme Sayfası</h3>
-
-    </div>
-
-</div>
-<br />
 <br />
 <div class="card pull-up ecom-card-1 bg-white container">
     <form asp-action="Index" method="post" enctype="multipart/form-data">
         <div class="text-center align-text-center justify-content-center">
-            @*<img src="~/userimages/@Html.DisplayFor(x=>x.IL)" style="width:150px;height:150px" />*@
+            <img src="@Model.Image" style="height:350px; width:350px; border-radius:50%" />
             <br />
-            <label>Profil Resmi</label>
+            
         </div>
         <br /><br />
 
-        <label>Adınız Soyadınız</label>
-        <input type="text" value="@Model.Name" />
-        <br />
+        <label>Adınız Soyadınız </label>
+        <input type="text" value="@Model.Name @Model.Surname" class="form-control" />
+        <br /> <br />
         <label>Mail Adresiniz</label>
-        <input type="text" value="@Model.Email" />
-        <br />
+        <input type="text" value="@Model.Email" class="form-control" />
+        <br /> <br />
         <label> Şifreniz</label>
-        <input type="password" name="Password" class="form-control" />
-        <br />
+        <input type="password" value="Password" class="form-control" />
+        <br /> <br />
         <div class="form-group">
             <label>Profil Resmi Seçin</label>
             <input type="file" name="Image" />
             <br />
         </div>
-        <br />
         <button class="btn btn-primary">Bilgileri Güncelle</button>
+        <br /><br />
     </form>
 
 </div>

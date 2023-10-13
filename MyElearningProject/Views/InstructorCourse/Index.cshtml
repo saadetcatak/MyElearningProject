@@ -30,6 +30,9 @@
                     <td>@item.Price ₺</td>
                     <td>@item.Category.CategoryName</td>
                     <td>
+                        <a href="/InstructorCourse/AddVideo/@item.CourseID" class="btn btn-outline-info">Videolar</a>
+                    </td>
+                    <td>
                         <a href="/InstructorCourse/DeleteCourse/@item.CourseID" class="btn btn-outline-danger" id="DeleteBtn"
                            onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
                     </td>
@@ -38,9 +41,7 @@
 
                     </td>
 
-                    <td>
-                        <a href="/InstructorCourse/AddVideo/@item.CourseID" class="btn btn-outline-info">Videolar</a>
-                    </td>
+
 
                 </tr>
                     }

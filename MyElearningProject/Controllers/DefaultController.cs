@@ -37,6 +37,10 @@ namespace MyElearningProject.Controllers
         public PartialViewResult CategoryPartial()
         {
             var values = context.Categories.Where(x=>x.Status==true).ToList();
+            ViewBag.c1 = context.Courses.Where(x => x.CourseID == 1).Select(y => y.Title).FirstOrDefault();
+            ViewBag.c2 = context.Courses.Where(x => x.CourseID == 4).Select(y => y.Title).FirstOrDefault();
+            ViewBag.c3 = context.Courses.Where(x => x.CourseID == 5).Select(y => y.Title).FirstOrDefault();
+            ViewBag.c4 = context.Courses.Where(x => x.CourseID == 9).Select(y => y.Title).FirstOrDefault();
             return PartialView(values);
         }
 
@@ -57,5 +61,14 @@ namespace MyElearningProject.Controllers
             var values = context.Testimonials.ToList();
             return PartialView(values);
         }
+
+     
+        public PartialViewResult SubscribePartial()
+        {
+            var values = context.Subscribes.ToList();
+            return PartialView(values);
+        }
+
+      
     }
 }

@@ -28,8 +28,8 @@ namespace MyElearningProject.Controllers
         [HttpGet]
         public ActionResult UpdateCourse(int id)
         {
-            var categories = context.Categories.ToList();
 
+            var categories = context.Categories.ToList();
             List<SelectListItem> category = (from x in categories
                                              select new SelectListItem
                                              {
@@ -38,7 +38,6 @@ namespace MyElearningProject.Controllers
                                              }).ToList();
 
             ViewBag.category = category;
-
             var values = context.Courses.Find(id);
             return View(values);
         }

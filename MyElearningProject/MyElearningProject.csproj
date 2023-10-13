@@ -1490,6 +1490,8 @@
     <Content Include="Views\StudentCourse\Index.cshtml" />
     <Content Include="Views\StudentCourse\WatchCourse.cshtml" />
     <Content Include="Templates\half-star-rating\css-half-star-rating\README.md" />
+    <Content Include="Views\Subscribe\UpdateSubscribe.cshtml" />
+    <Content Include="Views\Default\SubscribePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
